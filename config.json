@@ -1,0 +1,13 @@
+{
+    "channelId": "919680204283195472",
+    "guildId": "919676702966304808",
+    "color": "#d4d4d4",
+    "antispam": {
+        "limit": 7,
+        "diff": 5000,
+        "muteTime": 3600000 
+    },
+    "reactionRoles": [
+        { "messageId": "974746941680394250 ", "reaction": "👍", "roleId": "919679751315128423" }
+    ]
+}
