@@ -23,7 +23,8 @@ for(const file of slashCommandFiles) {
 
 // Client ready
 client.once("ready", async () => {
-    console.log("Ready!")
+    console.log(`Ready! We are in as ${client.user.username}`)
+    client.user.setActivity("with Hooman! :D Or turning it >:D")
 })
 
 // Keep alive code
