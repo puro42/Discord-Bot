@@ -18,7 +18,12 @@ const slashCommandFiles = fs.readdirSync("./slash_commands").filter(file => file
 
 for(const file of slashCommandFiles) {
     const slashCommand = require(`./slash_commands/${file}`)
+  try{
     client.slashCommands.set(slashCommand.data.name, slashCommand)
+  }
+  catch{
+    console.log("Failed to load")
+  }
 }
 
 // Client ready
