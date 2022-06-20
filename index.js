@@ -121,7 +121,7 @@ client.on("guildMemberAdd", async (member) => {
 client.on("interactionCreate", async (interaction) => {
     if(!interaction.isCommand()) return
     const command = interaction.commandName
-    if(!client.slashCommands.has(command)) return /*await interaction.reply({ content: `${config.emojis.no} There is no such command`, ephemeral: true })*/
+    if(!client.slashCommands.has(command)) //*return await interaction.reply({ content: `${config.emojis.no} There is no such command`, ephemeral: true }) //*
     try {
         client.slashCommands.get(command).execute(client, interaction)
     } catch(error) {
