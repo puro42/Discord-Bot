@@ -6,7 +6,7 @@ const command = new SlashCommandBuilder()
     .addStringOption(option =>
         option
             .setName("user")
-            .setDescription("The user to be ban")
+            .setDescription("The user to be banned")
             .setRequired(true))
 
 module.exports = {
@@ -16,7 +16,7 @@ module.exports = {
       const embed_unex_error = new MessageEmbed()
       console.log(/^\d+$/.test(user))
       console.log(user.lenght)
-      if(!user) return interaction.reply("An unexpected error accured") 
+      if(!user) return interaction.reply("An unexpected error occured") 
       if(/^\d+$/.test(user) && user.lenght == 18) {
         console.log("here")
         interaction.guild.members.fetch(user)

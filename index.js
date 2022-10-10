@@ -29,7 +29,7 @@ for(const file of slashCommandFiles) {
 // Client ready
 client.once("ready", async () => {
     console.log(`Ready! We are in as ${client.user.username}`)
-    client.user.setActivity("with Hooman! :D Or turning it >:D")
+    client.user.setActivity(`${client.guilds.size} servers`, { type: "WATCHING" })
 })
 
 // Keep alive code
@@ -93,7 +93,7 @@ client.on("messageCreate", async (message) => {
     else {
         let fn = setTimeout(() => {
             usersMap.delete(message.author.id);
-            console.log('Removed from map.')
+          
         }, TIME);
         usersMap.set(message.author.id, {
             msgCount: 1,
@@ -110,7 +110,7 @@ client.on("guildMemberAdd", async (member) => {
         .setColor(config.color)
         .setThumbnail(member.user.avatarURL({ dynamic: true }))
         .setDescription(`Hello ${member.user.tag} to the server!\nWe are happy to have you here and we will give you a nice warm and snuggly welcome!\nCheck out the server channels and have a great time!\nWe hope you have a great time at our server!`)
-        .setFooter({ text: `${guild.name} | ID: ${guild.id}`, iconURL: guildIcon })
+      
         .setTimestamp()
     
     const channel = await client.channels.cache.get(config.channelId)
@@ -131,3 +131,4 @@ client.on("interactionCreate", async (interaction) => {
 })
 
 client.login(process.env.TOKEN)
+client.on("debug", ( e ) => console.log(e));
