@@ -8,4 +8,4 @@ module.exports = {
     execute: async (client, interaction) => {
         await interaction.reply("https://tenor.com/view/wolf-gif-24607072")
     }
-}
+}  
